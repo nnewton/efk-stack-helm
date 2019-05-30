@@ -20,5 +20,8 @@ dependencies:
 - name: elasticsearch-exporter
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 1.2.0
-digest: sha256:fd157d015f8023985fdd2525b9f59df6a0aac660edbd0b6155be41a53801ed20
-generated: "2019-05-29T13:21:53.357530235-07:00"
+- name: elastalert
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 1.0.0
+digest: sha256:e60f25b9ef5b9861ed317da8fb0cb58bcf46166c2ef4730d7b72e4b1302bc893
+generated: "2019-05-30T12:28:22.815519942-07:00"

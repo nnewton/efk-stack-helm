@@ -3,14 +3,42 @@
 # Declare variables to be passed into your templates.
 elasticsearch:
   enabled: true
+  image:
+    tag: "6.7.2"
+  client:
+    heapSize: "1024m"
+    serviceType: NodePort
+    httpNodePort: 30200
+    resources:
+      limits:
+        cpu: "2"
+      requests:
+        cpu: "25m"
+        memory: "1Gi"
+  data:
+    persistence:
+      size: "100Gi"
+    heapSize: "2048m"
+    resources:
+      limits:
+        cpu: "2"
+      requests:
+        cpu: "25m"
+        memory: "2Gi"
 
 kibana:
   enabled: true
+  service:
+    type: NodePort
+  image:
+    tag: "6.7.2"
   env:
     ELASTICSEARCH_HOSTS: http://test-elasticsearch-client:9200
 
 fluentd:
   enabled: true
+  output:
+    host: test-elasticsearch-client
 
 fluentd-elasticsearch:
   enabled: true 
@@ -51,3 +79,9 @@ elasticsearch-curator:
 
 elasticsearch-exporter:
   enabled: false
+
+elastalert:
+  enabled: true
+  writebackIndex: elastalert
+  elasticsearch:
+    host: test-elasticsearch-client
