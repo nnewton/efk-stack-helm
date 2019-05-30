@@ -33,17 +33,17 @@ kibana:
   image:
     tag: "6.7.2"
   env:
-    ELASTICSEARCH_HOSTS: http://elasticsearch-client:9200
+    ELASTICSEARCH_HOSTS: http://RELEASENAME-elasticsearch-client:9200
 
 fluentd:
   enabled: true
   output:
-    host: elasticsearch-client
+    host: RELEASENAME-elasticsearch-client
 
 fluentd-elasticsearch:
   enabled: true 
   elasticsearch:
-    host: elasticsearch-client
+    host: RELEASENAME-elasticsearch-client
 
 nginx-ldapauth-proxy:
   enabled: false
@@ -84,4 +84,4 @@ elastalert:
   enabled: true
   writebackIndex: elastalert
   elasticsearch:
-    host: elasticsearch-client
+    host: RELEASENAME-elasticsearch-client
