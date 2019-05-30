@@ -1,6 +1,6 @@
-# EFK Helm Chart
+# EFK Helm Chart Based on Elastic-Stack
 
-This chart installs an elasticsearch cluster with kibana and fluentd by default.
+This chart installs an elasticsearch cluster with kibana and fluentd by default. Based on stable/elastic-stack.
 
 ## Prerequisites Details
 
@@ -37,8 +37,3 @@ Deletion of the StatefulSet doesn't cascade to deleting associated PVCs. To dele
 ```
 $ kubectl delete pvc -l release=my-release,component=data
 ```
-
-## Configuration
-
-Each requirement is configured with the options provided by that Chart.
-Please consult the relevant charts for their configuration options.
