@@ -19,7 +19,7 @@ This chart will do the following:
 To install the chart with the release name `my-release`:
 
 ```bash
-$ helm install --name my-release stable/elastic-stack
+$ helm install --name my-release . 
 ```
 NOTE: You need to update values.yaml to reflect your release name. Replace RELEASENAME with the
 chosen release name.
