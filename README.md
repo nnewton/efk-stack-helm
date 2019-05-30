@@ -21,9 +21,8 @@ To install the chart with the release name `my-release`:
 ```bash
 $ helm install --name my-release stable/elastic-stack
 ```
-
-NOTE: Adding a release name will add that release name to all the service names and thus host settings 
-will need to be updated in values to reflect that.
+NOTE: You need to update values.yaml to reflect your release name. Replace RELEASENAME with the
+chosen release name.
 
 ## Deleting the Charts
 
